@@ -16,7 +16,7 @@ import lombok.Data;
 @Entity
 @Table(name = "tb_clients")
 @Data
-public class ClientModel { // Nome da entidade que vai ser tratada como a tabela tb_clients
+public class ClienteModel { // Nome da entidade que vai ser tratada como a tabela tb_clients
     
 
     @Id

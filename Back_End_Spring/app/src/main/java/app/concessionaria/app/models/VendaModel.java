@@ -26,7 +26,7 @@ public class VendaModel {
 
     @ManyToOne
     @JoinColumn(name="id_cliente")
-    private ClientModel cliente;
+    private ClienteModel cliente;
 
     @ManyToOne
     @JoinColumn(name="id_automovel")
