@@ -1,0 +1,35 @@
+<mat-table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="modelo" >
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Modelo </mat-header-cell>
+    <mat-cell *matCellDef="let automovel"> {{automovel.modelo}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="marca">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Marca </mat-header-cell>
+    <mat-cell *matCellDef="let automovel"> {{automovel.marca}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cor">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Cor </mat-header-cell>
+    <mat-cell *matCellDef="let automovel"> {{automovel.cor}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ano">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Ano </mat-header-cell>
+    <mat-cell *matCellDef="let automovel"> {{automovel.ano}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="placa">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Placa </mat-header-cell>
+    <mat-cell *matCellDef="let automovel"> {{automovel.placa}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> </mat-header-cell>
+    <mat-cell *matCellDef="let automovel">lalal </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
