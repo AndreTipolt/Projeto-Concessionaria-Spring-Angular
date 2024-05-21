@@ -53,4 +53,9 @@ public class ClienteService {
 
         this.clienteRepository.save(clienteModel);
     }
+
+    public ClienteModel findClienteByIdOrThrowException(String idCliente) {
+        
+        return this.clienteRepository.findById(idCliente).orElseThrow(() -> new ObjectNotFoundException("Cliente não encontrado"));
+    }
 }
