@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import app.concessionaria.app.dtos.req.AutomovelDTOReq;
 import app.concessionaria.app.dtos.res.AutomovelDTORes;
 import app.concessionaria.app.models.AutomovelModel;
 import app.concessionaria.app.repositories.AutomovelRepository;
@@ -29,5 +30,27 @@ public class AutomovelService {
         AutomovelModel automovelModel = this.automovelRepository.findById(idAutomovel).orElseThrow(() -> new ObjectNotFoundException("Automovel não encontrado"));
 
         return new AutomovelDTORes(automovelModel);
+    }
+
+    @Transactional
+    public void deleteAutomovel(String idAutomovel) {
+
+        this.findAutomovelById(idAutomovel); // Se nao tiver vai lancar uma excecao
+
+        this.automovelRepository.deleteById(idAutomovel);
+    }
+
+    @Transactional
+    public void saveAutomovel(AutomovelDTOReq automovelDTOReq) {
+
+        AutomovelModel automovelModel = new AutomovelModel();
+
+        automovelModel.setAno(automovelDTOReq.getAno());
+        automovelModel.setCor(automovelDTOReq.getCor());
+        automovelModel.setPreco(automovelDTOReq.getPreco());
+        automovelModel.setPlaca(automovelDTOReq.getPlaca());
+        automovelModel.setMarca(automovelDTOReq.getMarca());
+
+        this.automovelRepository.save(automovelModel);
     }
 }
