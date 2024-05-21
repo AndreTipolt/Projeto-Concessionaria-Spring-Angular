@@ -21,7 +21,7 @@ public class ClienteService {
     private ClienteRepository clienteRepository;
 
     @Transactional
-    public List<ClienteDTORes> findAllAutomoveis() {
+    public List<ClienteDTORes> findAllClientes() {
         
         return this.clienteRepository.findAll().stream().map((cliente) -> new ClienteDTORes(cliente)).toList();
     }
