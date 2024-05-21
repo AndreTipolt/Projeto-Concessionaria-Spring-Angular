@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import app.concessionaria.app.repositories.ClienteRepository;
 
 @Service
-public class ClientService {
+public class ClienteService {
     
 
     @Autowired
