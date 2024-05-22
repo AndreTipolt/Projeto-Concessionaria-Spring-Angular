@@ -1,5 +1,6 @@
 export interface AutomovelDTORes{
 
+  id: string,
   modelo: string,
   placa: string,
   cor: string,

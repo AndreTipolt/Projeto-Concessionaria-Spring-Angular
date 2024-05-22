@@ -2,27 +2,27 @@
 
   <ng-container matColumnDef="modelo" >
     <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Modelo </mat-header-cell>
-    <mat-cell *matCellDef="let automovel"> {{automovel.modelo}} </mat-cell>
+    <mat-cell *matCellDef="let automovel" class="d-flex justify-content-center"> {{automovel.modelo}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="marca">
     <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Marca </mat-header-cell>
-    <mat-cell *matCellDef="let automovel"> {{automovel.marca}} </mat-cell>
+    <mat-cell *matCellDef="let automovel" class="d-flex justify-content-center"> {{automovel.marca}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="cor">
     <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Cor </mat-header-cell>
-    <mat-cell *matCellDef="let automovel"> {{automovel.cor}} </mat-cell>
+    <mat-cell *matCellDef="let automovel" class="d-flex justify-content-center"> {{automovel.cor}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="ano">
     <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Ano </mat-header-cell>
-    <mat-cell *matCellDef="let automovel"> {{automovel.ano}} </mat-cell>
+    <mat-cell *matCellDef="let automovel" class="d-flex justify-content-center"> {{automovel.ano}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="placa">
     <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Placa </mat-header-cell>
-    <mat-cell *matCellDef="let automovel"> {{automovel.placa}} </mat-cell>
+    <mat-cell *matCellDef="let automovel" class="d-flex justify-content-center"> {{automovel.placa}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="actions">
@@ -33,7 +33,7 @@
       </button>
     </mat-header-cell>
 
-    <mat-cell *matCellDef="let automovel">
+    <mat-cell *matCellDef="let automovel" class="d-flex justify-content-center">
       <button mat-fab color="primary" aria-label="Example icon button with a delete icon" style="transform: scale(0.7);" class="d-flex justify-content-center align-items-center">
         <mat-icon class="text-white">delete</mat-icon>
       </button>
