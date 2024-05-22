@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { AutomovelDTORes } from '../../types/res/AutomovelDTORes.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { ListAutomoveisService } from '../../services/list-automoveis.service';
@@ -7,16 +7,23 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 import { AddAutomovelComponent } from '../add-automovel/add-automovel.component';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-list-automoveis',
   templateUrl: './list-automoveis.component.html',
   styleUrls: ['./list-automoveis.component.scss']
 })
-export class ListAutomoveisComponent implements OnInit {
+export class ListAutomoveisComponent implements OnInit, AfterViewInit {
 
   displayedColumns: string[] = ['modelo', 'marca', 'cor', 'ano', 'placa', 'preco', 'actions']
   dataSource = new MatTableDataSource<AutomovelDTORes>();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+
+  ngAfterViewInit() {
+    this.dataSource.paginator = this.paginator;
+  }
 
   @Output() eventDeleteAutomovel = new EventEmitter<string>();
 

@@ -13,6 +13,7 @@ import { AutomoveisRoutingModule } from './automoveis-routing.module';
 import { AddAutomovelComponent } from './components/add-automovel/add-automovel.component';
 import { ListAutomoveisComponent } from './components/list-automoveis/list-automoveis.component';
 import { PageAutomoveisComponent } from './components/page-automoveis/page-automoveis.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { PageAutomoveisComponent } from './components/page-automoveis/page-autom
     MatDialogModule,
     MatButtonModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatPaginatorModule
   ]
 })
 export class AutomoveisModule { }
