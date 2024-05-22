@@ -6,6 +6,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
 import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
+import { AddAutomovelComponent } from '../add-automovel/add-automovel.component';
 
 @Component({
   selector: 'app-list-automoveis',
@@ -26,6 +27,7 @@ export class ListAutomoveisComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchAutomoveis()
+    this.adicionarAutomovel()
   }
 
   searchAutomoveis() {
@@ -75,4 +77,10 @@ export class ListAutomoveisComponent implements OnInit {
     });
   }
 
+  adicionarAutomovel() {
+
+    this.dialog.open(AddAutomovelComponent, {
+      width: '80%'
+    })
+  }
 }

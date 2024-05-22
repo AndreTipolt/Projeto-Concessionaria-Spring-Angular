@@ -1,21 +1,24 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { SharedModule } from '../shared/shared.module';
 import { AutomoveisRoutingModule } from './automoveis-routing.module';
+import { AddAutomovelComponent } from './components/add-automovel/add-automovel.component';
 import { ListAutomoveisComponent } from './components/list-automoveis/list-automoveis.component';
 import { PageAutomoveisComponent } from './components/page-automoveis/page-automoveis.component';
-import { MatDialogModule } from '@angular/material/dialog';
-
 
 @NgModule({
   declarations: [
     PageAutomoveisComponent,
-    ListAutomoveisComponent
+    ListAutomoveisComponent,
+    AddAutomovelComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +29,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    MatInputModule
   ]
 })
 export class AutomoveisModule { }
