@@ -13,7 +13,7 @@ public class ControllerExceptionHandler {
     
     @ExceptionHandler(ObjectNotFoundException.class)
     public ResponseEntity<StandardError> objectNotFoundException(ObjectNotFoundException e, HttpServletRequest request){
-        HttpStatus httpStatus = HttpStatus.BAD_REQUEST;
+        HttpStatus httpStatus = HttpStatus.NOT_FOUND;
 
         StandardError err = new StandardError(System.currentTimeMillis(), httpStatus.value(), "Object Not Found Exception", e.getMessage(), request.getRequestURI());
 

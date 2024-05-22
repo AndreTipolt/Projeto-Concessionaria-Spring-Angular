@@ -53,7 +53,7 @@ public class VendaController {
     @DeleteMapping(value = "/{idVenda}")
     public ResponseEntity<Void> deleteVendaById(@PathVariable String idVenda) {
 
-        this.deleteVendaById(idVenda);
+        this.vendaService.deleteVenda(idVenda);
 
         return ResponseEntity.ok().build();
     }

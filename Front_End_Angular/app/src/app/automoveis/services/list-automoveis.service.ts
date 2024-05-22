@@ -18,4 +18,11 @@ export class ListAutomoveisService {
 
     return this.httpClient.get<AutomovelDTORes[]>(APIURL);
   }
+
+  deleteAutomovelById(idAutomovel: string) {
+
+    const APIURL = encodeURI(`${this.BASE_API_URL}/automoveis/${idAutomovel}`)
+
+    return this.httpClient.delete(APIURL);
+  }
 }

@@ -54,7 +54,7 @@ public class AutomovelController {
     @DeleteMapping(value = "/{idAutomovel}")
     public ResponseEntity<Void> deleteAutomovelById(@PathVariable String idAutomovel) {
 
-        this.deleteAutomovelById(idAutomovel);
+        this.automovelService.deleteAutomovel(idAutomovel);
 
         return ResponseEntity.ok().build();
     }
