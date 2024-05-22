@@ -4,6 +4,8 @@ import { MatTableDataSource } from '@angular/material/table';
 import { ListAutomoveisService } from '../../services/list-automoveis.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmationDialogComponent } from 'src/app/shared/components/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-list-automoveis',
@@ -18,7 +20,8 @@ export class ListAutomoveisComponent implements OnInit {
   @Output() eventDeleteAutomovel = new EventEmitter<string>();
 
   constructor(private listAutomoveisService: ListAutomoveisService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -30,14 +33,14 @@ export class ListAutomoveisComponent implements OnInit {
     this.listAutomoveisService.findAllAutomoveis().subscribe({
       next: (listAutomoveis: AutomovelDTORes[]) => {
 
-        if(listAutomoveis) {
+        if (listAutomoveis) {
           this.dataSource.data = listAutomoveis;
         }
       },
 
       error: (error: HttpErrorResponse) => {
 
-        if(error.status == 500 || error.status == 404) {
+        if (error.status == 500 || error.status == 404) {
 
           this.openSnackBar("Erro ao buscar automoveis")
         }
@@ -52,7 +55,24 @@ export class ListAutomoveisComponent implements OnInit {
 
   deleteAutomovel(idAutomovel: string) {
 
-    this.eventDeleteAutomovel.emit(idAutomovel);
+
+    const dialog = this.openConfirmationDialog("Deseja deletar esse automóvel? ")
+
+    dialog.afterClosed().subscribe({
+      next: (result) => {
+
+        if (result) {
+          this.eventDeleteAutomovel.emit(idAutomovel);
+        }
+      }
+    })
+  }
+
+  openConfirmationDialog(message: string) {
+
+    return this.dialog.open(ConfirmationDialogComponent, {
+      data: message
+    });
   }
 
 }

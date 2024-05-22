@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AutomoveisRoutingModule } from './automoveis-routing.module';
 import { ListAutomoveisComponent } from './components/list-automoveis/list-automoveis.component';
 import { PageAutomoveisComponent } from './components/page-automoveis/page-automoveis.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
@@ -23,7 +24,9 @@ import { PageAutomoveisComponent } from './components/page-automoveis/page-autom
     MatTableModule,
     MatSnackBarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatButtonModule
   ]
 })
 export class AutomoveisModule { }
