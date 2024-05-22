@@ -1,0 +1,47 @@
+<div class="content add-cliente">
+
+  <h1>Adicionar Automóvel</h1>
+
+  <div>
+    <form [formGroup]="formAdicionarCliente" class="d-flex flex-column">
+
+      <div class="row">
+        <mat-form-field class="col-6">
+          <input matInput placeholder="Modelo" formControlName="modelo" #modelo type="modelo">
+          <mat-error *ngIf="formAdicionarCliente.get('modelo')?.invalid">{{ getErrorMessage("modelo") }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <input matInput placeholder="Placa" formControlName="placa" #placa type="placa" [type]="'placa'">
+          <mat-error *ngIf="formAdicionarCliente.get('placa')?.invalid">{{ getErrorMessage("placa") }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="col-6">
+          <input matInput placeholder="Cor" formControlName="cor" #cor type="cor" [type]="'cor'">
+          <mat-error *ngIf="formAdicionarCliente.get('cor')?.invalid">{{ getErrorMessage("cor") }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <input matInput placeholder="Marca" formControlName="marca" #marca type="marca" [type]="'marca'">
+          <mat-error *ngIf="formAdicionarCliente.get('marca')?.invalid">{{ getErrorMessage("marca") }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="row">
+        <mat-form-field class="col-6">
+          <input matInput placeholder="Preco" formControlName="preco" #preco type="preco" [type]="'preco'">
+          <mat-error *ngIf="formAdicionarCliente.get('preco')?.invalid">{{ getErrorMessage("preco") }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="col-6">
+          <input matInput placeholder="Ano" formControlName="ano" #ano type="ano" [type]="'ano'">
+          <mat-error *ngIf="formAdicionarCliente.get('ano')?.invalid">{{ getErrorMessage("ano") }}</mat-error>
+        </mat-form-field>
+      </div>
+
+    </form>
+    <button mat-raised-button color="primary" class="login-button" (click)="onSubmit()">Adicionar</button>
+  </div>
+</div>

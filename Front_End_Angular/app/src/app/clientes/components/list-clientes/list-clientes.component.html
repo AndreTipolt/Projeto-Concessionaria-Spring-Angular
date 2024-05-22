@@ -1,0 +1,55 @@
+<mat-table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="modelo" >
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Modelo </mat-header-cell>
+    <mat-cell *matCellDef="let cliente" class="d-flex justify-content-center"> {{cliente.modelo}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="marca">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Marca </mat-header-cell>
+    <mat-cell *matCellDef="let cliente" class="d-flex justify-content-center"> {{cliente.marca}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cor">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Cor </mat-header-cell>
+    <mat-cell *matCellDef="let cliente" class="d-flex justify-content-center"> {{cliente.cor}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="ano">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Ano </mat-header-cell>
+    <mat-cell *matCellDef="let cliente" class="d-flex justify-content-center"> {{cliente.ano}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="placa">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Placa </mat-header-cell>
+    <mat-cell *matCellDef="let cliente" class="d-flex justify-content-center"> {{cliente.placa}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="preco">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white"> Preco </mat-header-cell>
+    <mat-cell *matCellDef="let cliente" class="d-flex justify-content-center"> {{cliente.preco | currency: 'BRL'}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="d-flex justify-content-center bg-dark text-white">
+
+      <button mat-fab color="secondary" aria-label="Example icon button with a delete icon" style="transform: scale(0.7);" class="d-flex justify-content-center align-items-center" (click)="adicionarCliente()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let cliente" class="d-flex justify-content-center">
+      <button mat-fab color="primary" aria-label="Example icon button with a delete icon" style="transform: scale(0.7);" class="d-flex justify-content-center align-items-center" (click)="deleteCliente(cliente.id)">
+        <mat-icon class="text-white">delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                 showFirstLastButtons
+                 aria-label="Select page of periodic elements">
+  </mat-paginator>
