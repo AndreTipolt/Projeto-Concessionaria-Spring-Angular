@@ -37,6 +37,9 @@ public class AutomovelModel {
     @Column(name = "preco", nullable = false)
     private Integer preco;
 
+    @Column(name = "modelo", nullable = false)
+    private String modelo;
+
     @JsonIgnore
     @OneToMany(mappedBy = "automovel")
     private List<VendaModel> listVendas;

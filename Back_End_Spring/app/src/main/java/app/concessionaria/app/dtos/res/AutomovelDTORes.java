@@ -24,6 +24,8 @@ public class AutomovelDTORes {
 
     private Integer preco;
 
+    private String modelo;
+
     public AutomovelDTORes(AutomovelModel automovelModel) {
 
         this.id = automovelModel.getId();
@@ -32,6 +34,7 @@ public class AutomovelDTORes {
         this.marca = automovelModel.getMarca();
         this.ano = automovelModel.getAno();
         this.preco = automovelModel.getPreco();
+        this.modelo = automovelModel.getModelo();
     }
 
 }

@@ -28,6 +28,9 @@ public class AutomovelDTOReq {
     @NotBlank(message = "Preço não pode estar em branco")
     private Integer preco;
 
+    @NotBlank(message = "Modelo não pode estar em branco")
+    private String modelo;
+
     public AutomovelDTOReq(AutomovelModel automovelModel) {
 
         this.placa = automovelModel.getPlaca();

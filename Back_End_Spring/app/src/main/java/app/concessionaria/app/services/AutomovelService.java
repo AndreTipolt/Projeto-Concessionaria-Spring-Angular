@@ -9,7 +9,6 @@ import org.springframework.transaction.annotation.Transactional;
 import app.concessionaria.app.dtos.req.AutomovelDTOReq;
 import app.concessionaria.app.dtos.res.AutomovelDTORes;
 import app.concessionaria.app.models.AutomovelModel;
-import app.concessionaria.app.models.ClienteModel;
 import app.concessionaria.app.repositories.AutomovelRepository;
 import app.concessionaria.app.services.exceptions.ObjectNotFoundException;
 
@@ -51,6 +50,7 @@ public class AutomovelService {
         automovelModel.setPreco(automovelDTOReq.getPreco());
         automovelModel.setPlaca(automovelDTOReq.getPlaca());
         automovelModel.setMarca(automovelDTOReq.getMarca());
+        automovelModel.setModelo(automovelDTOReq.getModelo());
 
         this.automovelRepository.save(automovelModel);
     }
