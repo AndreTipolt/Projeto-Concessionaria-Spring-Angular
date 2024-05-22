@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { AutomoveisRoutingModule } from './automoveis-routing.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
 import { SharedModule } from '../shared/shared.module';
-import { PageAutomoveisComponent } from './components/page-automoveis/page-automoveis.component';
-import {MatTableModule} from '@angular/material/table';
+import { AutomoveisRoutingModule } from './automoveis-routing.module';
 import { ListAutomoveisComponent } from './components/list-automoveis/list-automoveis.component';
+import { PageAutomoveisComponent } from './components/page-automoveis/page-automoveis.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ListAutomoveisComponent } from './components/list-automoveis/list-autom
     CommonModule,
     AutomoveisRoutingModule,
     SharedModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule
   ]
 })
 export class AutomoveisModule { }
