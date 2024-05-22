@@ -25,7 +25,6 @@ public class AutomovelDTOReq {
     @NotBlank(message = "Ano não pode estar em branco")
     private String ano;
 
-    @NotBlank(message = "Preço não pode estar em branco")
     private Integer preco;
 
     @NotBlank(message = "Modelo não pode estar em branco")

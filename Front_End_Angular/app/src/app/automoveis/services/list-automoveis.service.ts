@@ -1,3 +1,4 @@
+import { AutomovelDTOReq } from './../types/req/AutomovelDTOReq.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -24,5 +25,12 @@ export class ListAutomoveisService {
     const APIURL = encodeURI(`${this.BASE_API_URL}/automoveis/${idAutomovel}`)
 
     return this.httpClient.delete(APIURL);
+  }
+
+  saveAutomovelById(automovelDTOReq: AutomovelDTOReq) {
+
+    const APIURL = encodeURI(`${this.BASE_API_URL}/automoveis/save`)
+
+    return this.httpClient.post(APIURL, automovelDTOReq);
   }
 }

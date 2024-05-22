@@ -15,7 +15,7 @@ import { AddAutomovelComponent } from '../add-automovel/add-automovel.component'
 })
 export class ListAutomoveisComponent implements OnInit {
 
-  displayedColumns: string[] = ['modelo', 'marca', 'cor', 'ano', 'placa', 'actions']
+  displayedColumns: string[] = ['modelo', 'marca', 'cor', 'ano', 'placa', 'preco', 'actions']
   dataSource = new MatTableDataSource<AutomovelDTORes>();
 
   @Output() eventDeleteAutomovel = new EventEmitter<string>();
@@ -27,7 +27,6 @@ export class ListAutomoveisComponent implements OnInit {
 
   ngOnInit(): void {
     this.searchAutomoveis()
-    this.adicionarAutomovel()
   }
 
   searchAutomoveis() {
@@ -44,7 +43,7 @@ export class ListAutomoveisComponent implements OnInit {
 
         if (error.status == 500 || error.status == 404) {
 
-          this.openSnackBar("Erro ao buscar automoveis")
+          this.openSnackBar("Erro ao adicionar automovel")
         }
       }
     })

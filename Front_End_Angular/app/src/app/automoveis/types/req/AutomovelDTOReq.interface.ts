@@ -1,6 +1,4 @@
-export interface AutomovelDTORes{
-
-  id: string,
+export interface AutomovelDTOReq {
   modelo: string,
   placa: string,
   cor: string,
