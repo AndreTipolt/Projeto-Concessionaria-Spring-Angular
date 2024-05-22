@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { AutomovelDTORes } from '../../types/res/AutomovelDTORes.interface';
 import { MatTableDataSource } from '@angular/material/table';
 import { ListAutomoveisService } from '../../services/list-automoveis.service';
@@ -14,6 +14,9 @@ export class ListAutomoveisComponent implements OnInit {
 
   displayedColumns: string[] = ['modelo', 'marca', 'cor', 'ano', 'placa', 'actions']
   dataSource = new MatTableDataSource<AutomovelDTORes>();
+
+  @Output() eventDeleteAutomovel = new EventEmitter<string>();
+
   constructor(private listAutomoveisService: ListAutomoveisService,
     private snackBar: MatSnackBar
   ) { }
@@ -45,6 +48,11 @@ export class ListAutomoveisComponent implements OnInit {
   openSnackBar(message: string) {
 
     this.snackBar.open(message, "Fechar");
+  }
+
+  deleteAutomovel(idAutomovel: string) {
+
+    this.eventDeleteAutomovel.emit(idAutomovel);
   }
 
 }

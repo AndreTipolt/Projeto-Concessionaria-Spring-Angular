@@ -34,7 +34,7 @@
     </mat-header-cell>
 
     <mat-cell *matCellDef="let automovel" class="d-flex justify-content-center">
-      <button mat-fab color="primary" aria-label="Example icon button with a delete icon" style="transform: scale(0.7);" class="d-flex justify-content-center align-items-center">
+      <button mat-fab color="primary" aria-label="Example icon button with a delete icon" style="transform: scale(0.7);" class="d-flex justify-content-center align-items-center" (click)="deleteAutomovel(automovel.id)">
         <mat-icon class="text-white">delete</mat-icon>
       </button>
     </mat-cell>
