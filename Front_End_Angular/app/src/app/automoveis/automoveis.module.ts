@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { SharedModule } from '../shared/shared.module';
@@ -19,7 +21,9 @@ import { PageAutomoveisComponent } from './components/page-automoveis/page-autom
     AutomoveisRoutingModule,
     SharedModule,
     MatTableModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatButtonModule,
+    MatIconModule
   ]
 })
 export class AutomoveisModule { }

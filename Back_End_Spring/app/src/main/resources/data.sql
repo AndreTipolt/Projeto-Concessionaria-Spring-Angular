@@ -1,0 +1,1 @@
+INSERT INTO TB_AUTOMOVEL(preco, ano, cor, marca, placa, id, modelo) VALUES(5900000, '2018', 'Vermelho', 'Honda', 'LFI-8F63', '2419d6c9-e050-4d62-8951-789bdd4dadc4', 'Fiat MOB');
